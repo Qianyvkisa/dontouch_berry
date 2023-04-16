@@ -1,5 +1,6 @@
 package io.github.Qianyvkisa.don_touch_berry;
 
+import io.github.Qianyvkisa.don_touch_berry.items.the_god_berry;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
@@ -19,7 +20,8 @@ public class DonTouchBerry implements ModInitializer {
 
 	public static final Item the_god_berry =
 			Registry.register(Registries.ITEM, new Identifier(ModID, "the_god_berry"),
-					new Item(new FabricItemSettings()));
+					new the_god_berry(new FabricItemSettings()));
+
 
 	@Override
 	public void onInitialize() {
