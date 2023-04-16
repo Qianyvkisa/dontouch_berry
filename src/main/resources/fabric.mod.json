@@ -9,21 +9,21 @@
     "llama"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "https://github.com/Qianyvkisa",
+    "sources": "https://github.com/Qianyvkisa/dontouch_berry"
   },
 
-  "license": "CC0-1.0",
+  "license": "MIT",
   "icon": "assets/modid/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.example.ExampleMod"
+      "io.github.Qianyvkisa.don_touch_berry.DonTouchBerry"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "don_touch_berry.mixins.json"
   ],
 
   "depends": {
