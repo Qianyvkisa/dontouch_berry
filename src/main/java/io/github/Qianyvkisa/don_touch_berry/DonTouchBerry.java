@@ -13,10 +13,12 @@ public class DonTouchBerry implements ModInitializer {
 	// This logger is used to write text to the console and the log file.
 	// It is considered best practice to use your mod id as the logger's name.
 	// That way, it's clear which mod wrote info, warnings, and errors.
-	public static final Logger LOGGER = LoggerFactory.getLogger("modid");
+
+	public static final String ModID = "don_touch_berry";
+	public static final Logger LOGGER = LoggerFactory.getLogger(ModID);
 
 	public static final Item the_god_berry =
-			Registry.register(Registries.ITEM, new Identifier("don_touch_berry", "the_god_berry"),
+			Registry.register(Registries.ITEM, new Identifier(ModID, "the_god_berry"),
 					new Item(new FabricItemSettings()));
 
 	@Override
