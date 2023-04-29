@@ -1,0 +1,9 @@
+{
+  "variants":{
+    "" : [
+      {
+        "model" : "don_touch_berry:block/the_god_berry_bush"
+      }
+    ]
+  }
+}
