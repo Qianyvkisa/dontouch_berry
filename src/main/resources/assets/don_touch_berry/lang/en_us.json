@@ -1,4 +1,7 @@
 {
   "item.don_touch_berry.the_god_berry": "The God Berry",
-  "block.don_touch_berry.the_god_berry": "The God Berry"
+
+  "block.don_touch_berry.the_god_berry": "The God Berry",
+
+  "itemGroups.don_touch_berry.the_berry": "some berries"
 }

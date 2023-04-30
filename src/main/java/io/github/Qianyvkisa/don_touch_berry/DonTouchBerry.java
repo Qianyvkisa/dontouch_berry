@@ -3,6 +3,7 @@ package io.github.Qianyvkisa.don_touch_berry;
 import io.github.Qianyvkisa.don_touch_berry.items.the_god_berry;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
@@ -11,11 +12,9 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.shape.VoxelShape;
-import net.minecraft.world.BlockView;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 
 public class DonTouchBerry implements ModInitializer {
 	// This logger is used to write text to the console and the log file.
@@ -33,6 +32,9 @@ public class DonTouchBerry implements ModInitializer {
 	public static final Block the_god_berry_bush = new PlantBlock(FabricBlockSettings.of(Material.BARRIER).breakInstantly().strength(0.0f,0.0f).noCollision().sounds(BlockSoundGroup.SWEET_BERRY_BUSH));
 	public static final BlockItem the_god_berry_bush_block = new BlockItem(the_god_berry_bush,new FabricItemSettings());
 
+	private static final ItemGroup The_Berry = FabricItemGroup.builder(new Identifier(ModID, "the_berry"))
+			.icon(() -> new ItemStack(the_god_berry))
+			.build();
 
 	@Override
 	public void onInitialize() {
@@ -44,8 +46,8 @@ public class DonTouchBerry implements ModInitializer {
 		Registry.register(Registries.BLOCK, new Identifier(ModID,"the_god_berry_bush"),the_god_berry_bush);
 		Registry.register(Registries.ITEM, new Identifier(ModID,"the_god_berry_bush_block"),the_god_berry_bush_block);
 
-		ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(the_god_berry_bush_block -> {
-			the_god_berry_bush_block.addAfter(Items.CUT_COPPER_SLAB,the_god_berry_bush);
+		ItemGroupEvents.modifyEntriesEvent(The_Berry).register(content -> {
+			content.add(the_god_berry_bush_block);
 		});
 
 
