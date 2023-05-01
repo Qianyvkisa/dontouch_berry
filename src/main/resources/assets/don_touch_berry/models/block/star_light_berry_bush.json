@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "don_touch_berry:block/star_light_berry_bush"
+  }
+}

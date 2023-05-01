@@ -68,5 +68,6 @@ public class DonTouchBerry implements ModInitializer {
 
 
 		BlockRenderLayerMap.INSTANCE.putBlock(the_god_berry_bush, RenderLayer.getCutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(star_light_berry_bush, RenderLayer.getCutout());
 	}
 }

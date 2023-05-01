@@ -1,0 +1,9 @@
+{
+  "variants":{
+    "" : [
+      {
+        "model" : "don_touch_berry:block/star_light_berry_bush"
+      }
+    ]
+  }
+}
