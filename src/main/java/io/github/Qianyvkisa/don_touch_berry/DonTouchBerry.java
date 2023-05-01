@@ -1,5 +1,6 @@
 package io.github.Qianyvkisa.don_touch_berry;
 
+import io.github.Qianyvkisa.don_touch_berry.blocks.star_light_berry_bush;
 import io.github.Qianyvkisa.don_touch_berry.blocks.the_god_berry_bush;
 import io.github.Qianyvkisa.don_touch_berry.items.the_god_berry;
 import net.fabricmc.api.ModInitializer;
@@ -37,6 +38,9 @@ public class DonTouchBerry implements ModInitializer {
 	public static final Block the_god_berry_bush = new the_god_berry_bush(FabricBlockSettings.of(Material.BARRIER).breakInstantly().strength(0.0f,0.0f).noCollision().sounds(BlockSoundGroup.SWEET_BERRY_BUSH).nonOpaque());
 	public static final BlockItem the_god_berry_bush_block = new BlockItem(the_god_berry_bush,new FabricItemSettings());
 
+	public static final Block star_light_berry_bush = new star_light_berry_bush(FabricBlockSettings.of(Material.BARRIER).breakInstantly().strength(0.0f,0.0f).noCollision().sounds(BlockSoundGroup.SWEET_BERRY_BUSH).nonOpaque());
+	public static final BlockItem star_light_berry_bush_block = new BlockItem(star_light_berry_bush, new FabricItemSettings());
+
 
 	private static final ItemGroup The_Berry = FabricItemGroup.builder(new Identifier(ModID, "the_berry"))
 			.icon(() -> new ItemStack(the_god_berry))
@@ -50,7 +54,9 @@ public class DonTouchBerry implements ModInitializer {
 
 
 		Registry.register(Registries.BLOCK, new Identifier(ModID, "the_god_berry_bush"), the_god_berry_bush);
+		Registry.register(Registries.BLOCK,new Identifier(ModID,"star_light_berry_bush"), star_light_berry_bush);
 		Registry.register(Registries.ITEM, new Identifier(ModID, "the_god_berry_bush_block"), the_god_berry_bush_block);
+		Registry.register(Registries.ITEM, new Identifier(ModID,"star_light_berry_bush_block"),star_light_berry_bush_block);
 		ItemGroupEvents.modifyEntriesEvent(The_Berry).register(content -> {
 			content.add(the_god_berry_bush_block);
 		});
