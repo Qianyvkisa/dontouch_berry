@@ -55,11 +55,17 @@ public class DonTouchBerry implements ModInitializer {
 
 		Registry.register(Registries.BLOCK, new Identifier(ModID, "the_god_berry_bush"), the_god_berry_bush);
 		Registry.register(Registries.BLOCK,new Identifier(ModID,"star_light_berry_bush"), star_light_berry_bush);
+
 		Registry.register(Registries.ITEM, new Identifier(ModID, "the_god_berry_bush_block"), the_god_berry_bush_block);
 		Registry.register(Registries.ITEM, new Identifier(ModID,"star_light_berry_bush_block"),star_light_berry_bush_block);
+
 		ItemGroupEvents.modifyEntriesEvent(The_Berry).register(content -> {
 			content.add(the_god_berry_bush_block);
 		});
+		ItemGroupEvents.modifyEntriesEvent(The_Berry).register(content -> {
+			content.add(star_light_berry_bush);
+		});
+
 
 		BlockRenderLayerMap.INSTANCE.putBlock(the_god_berry_bush, RenderLayer.getCutout());
 	}
